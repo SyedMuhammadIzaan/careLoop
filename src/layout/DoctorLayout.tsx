@@ -6,6 +6,7 @@ import {
 import { Button, Layout, Menu, theme } from 'antd';
 import type { SidebarProps } from '../interface/SidebarProps';
 import { sidebarMenuItems } from '../constants/menuItems';
+import DoctorDashboard from '../features/doctor/DoctorDashboard';
 const { Header, Content, Sider } = Layout
 
 
@@ -41,17 +42,14 @@ const DoctorLayout: React.FC<SidebarProps> = ({ collapsed, onCollapse }) => {
                         />
                     </Header>
                     <Content
-                        style={{
-                            margin: '24px 16px',
-                            border:'2px solid black',
-                            padding: 24,
-                            minHeight: 280,
-                            background: colorBgContainer,
-                            borderRadius: borderRadiusLG,
-                        }}
+                        className='border-2 border-solid border-black m-4 md:m-6 min-h-[280px] rounded-lg'
+                        style={{ background: colorBgContainer, borderRadius: borderRadiusLG }}
                     >
-                        Content
+                        <div className='w-full max-w-[1200px] mx-auto px-4 md:px-6 py-4 md:py-6'>
+                            <DoctorDashboard />
+                        </div>
                     </Content>
+
                 </Layout>
             </Layout>
         </>
