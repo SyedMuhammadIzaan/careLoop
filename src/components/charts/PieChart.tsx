@@ -3,7 +3,7 @@ import React from 'react'
 import ReactApexChart from 'react-apexcharts';
 
 const PieChartComp: React.FC = () => {
-  const series = [40, 50, 60,5];
+  const series = [40, 50, 60, 5];
 
   const options: ApexOptions = {
     chart: {
@@ -14,27 +14,27 @@ const PieChartComp: React.FC = () => {
       {
         breakpoint: 768,
         options: {
-          chart: {
-            width: 280,
-          },
-          legend:{
-            position:'bottom',
+          // chart: {
+          //   width: '50%',
+          // },
+          legend: {
+            position: 'bottom',
           },
         },
 
-      }
+      },
     ],
-    legend:{
-      position:'right',
+    legend: {
+      position: 'right',
     },
-    dataLabels:{
-      enabled:true,
+    dataLabels: {
+      enabled: true,
     }
   }
   return (
-    <div>
-      <ReactApexChart options={options} series={series} type="pie" height={350} />
-    </div>
+    <>
+      <ReactApexChart options={options} series={series} type="pie" width="100%" height={350} />
+    </>
   )
 }
 
