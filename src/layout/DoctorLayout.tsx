@@ -42,7 +42,7 @@ const DoctorLayout: React.FC<SidebarProps> = ({ collapsed, onCollapse }) => {
                         />
                     </Header>
                     <Content
-                        className='border-2 border-solid border-black m-4 md:m-6 xl:border-green-400 md:p-8 min-h-[280px] rounded-lg'
+                        className='border-2 border-solid border-black m-4 md:m-6 md:p-8 min-h-[280px] rounded-lg'
                         style={{ background: colorBgContainer, borderRadius: borderRadiusLG }}
                     >
                         <div className='w-full max-w-[1200px] mx-auto px-4 md:px-6 py-4'>
