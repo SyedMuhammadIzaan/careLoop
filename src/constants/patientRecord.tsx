@@ -1,6 +1,7 @@
-import type {TableColumnsType} from 'antd';
 import type { DataType } from '../types/patientTypes';
+import { useTableSearch } from "../hooks/useTableSearch";
 
+const { getColumnSearchProps } = useTableSearch();
 export const data: DataType[] = [
   {
     key: '1',
@@ -28,8 +29,7 @@ export const data: DataType[] = [
   },
 ];
 
-
-export const columns: DataType[] = [
+export const columns = [
     {
       title: 'Name',
       dataIndex: 'name',
@@ -49,7 +49,7 @@ export const columns: DataType[] = [
       dataIndex: 'address',
       key: 'address',
       ...getColumnSearchProps('address'),
-      sorter: (a, b) => a.address.length - b.address.length,
+      sorter: (a: DataType, b: DataType) => a.address.length - b.address.length,
       sortDirections: ['descend', 'ascend'],
     },
   ];
