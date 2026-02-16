@@ -2,7 +2,7 @@
 import PieChartComp from "../../components/charts/PieChart"
 import StatisticComp from "../../components/Statistic"
 import TableComp from "../../components/TableComp"
-import { columns, data } from "../../constants/patientRecord"
+import { columns, data } from "../../constants/patientRecord.jsx";
 
 const DoctorDashboard = () => {
   return (

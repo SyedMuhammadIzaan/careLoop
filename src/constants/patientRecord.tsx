@@ -29,7 +29,7 @@ export const data: DataType[] = [
 ];
 
 
-export const columns: TableColumnsType<DataType> = [
+export const columns: DataType[] = [
     {
       title: 'Name',
       dataIndex: 'name',
