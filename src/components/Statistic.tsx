@@ -8,7 +8,7 @@ const StatisticComp: React.FC = () => {
                 { xs: 8, sm: 16, md: 24, lg: 32 },   // X axis
                 { xs: 8, sm: 16, md: 24, lg: 32 },   // Y axis
             ]}>
-                <Col span={5}>
+                <Col span={5} >
                     <Card variant="borderless" className="text-center">
                         <Statistic
                             title="Total Patient"

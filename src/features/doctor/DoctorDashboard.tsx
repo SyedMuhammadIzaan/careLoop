@@ -39,7 +39,7 @@ const DoctorDashboard = () => {
       <div className="statistic-container mb-2">
         <StatisticComp />
       </div>
-      <div className="chart-container grid grid-cols-1 border-2 border-blue-500 sm:border-green-300 md:grid-cols-2">
+      <div className="chart-container grid grid-cols-1 border-2 border-blue-500 md:grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="current-progress-container border-2 border-red-400 md:border-green-300">
           <PieChartComp />
         </div>
@@ -47,18 +47,12 @@ const DoctorDashboard = () => {
           <PieChartComp />
         </div>
       </div>
-      <div className="newly-patient-container" style={{
-        border:"px solid red",
-        marginTop:"3px",
-      }}>
-        <div className="" style={{
-          padding:"2px",
-          boxSizing:"border-box",
-        }}>
-          <div className="border-2 border-yellow-400">
+      <div className="newly-patient-container mt-3 border-2">
+        <div>
+          <div className="header-wrapper border-2 border-yellow-400 text-xl font-bold mb-2">
             <h3>Newly Added Patients</h3>
           </div>
-          <div className="border-2 border-yellow-800">
+          <div className="table-wrapper">
             <TableComp tableData={data} columns={columns} />
           </div>
         </div>
