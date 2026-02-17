@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.18",
     "antd": "^6.2.3",
     "apexcharts": "^5.3.6",
     "react": "^19.2.0",

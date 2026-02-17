@@ -47,8 +47,21 @@ const DoctorDashboard = () => {
           <PieChartComp />
         </div>
       </div>
-      <div className="newly-patient-container mt-3 border-2">
-        <TableComp tableData={data} columns={columns} />
+      <div className="newly-patient-container" style={{
+        border:"px solid red",
+        marginTop:"3px",
+      }}>
+        <div className="" style={{
+          padding:"2px",
+          boxSizing:"border-box",
+        }}>
+          <div className="border-2 border-yellow-400">
+            <h3>Newly Added Patients</h3>
+          </div>
+          <div className="border-2 border-yellow-800">
+            <TableComp tableData={data} columns={columns} />
+          </div>
+        </div>
       </div>
     </>
   )
