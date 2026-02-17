@@ -1,10 +1,39 @@
 // import React from 'react'
+import type { TableColumnsType } from "antd";
 import PieChartComp from "../../components/charts/PieChart";
 import StatisticComp from "../../components/Statistic";
 import TableComp from "../../components/TableComp";
-import {data, columns} from "../../constants/patientRecord.tsx"
+import { data } from "../../constants/patientRecord.ts"
+import type { DataType } from "../../types/patientTypes.ts";
+import { useTableSearch } from "../../hooks/useTableSearch";
 
 const DoctorDashboard = () => {
+  const { getColumnSearchProps } = useTableSearch();
+
+  const columns: TableColumnsType<DataType> = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+      width: '30%',
+      ...getColumnSearchProps('name'),
+    },
+    {
+      title: 'Age',
+      dataIndex: 'age',
+      key: 'age',
+      width: '20%',
+      ...getColumnSearchProps('age'),
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+      key: 'address',
+      ...getColumnSearchProps('address'),
+      sorter: (a, b) => a.address.length - b.address.length,
+      sortDirections: ['descend', 'ascend'],
+    },
+  ];
   return (
     <>
       <div className="statistic-container mb-2">

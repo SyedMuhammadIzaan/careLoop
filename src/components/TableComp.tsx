@@ -18,7 +18,7 @@ interface TableCompProps {
 }
 
 const TableComp: React.FC<TableCompProps> = ({ tableData, columns }) => {
-
+    
     return (
         <>
             <Table<DataType> columns={columns} dataSource={tableData} />
