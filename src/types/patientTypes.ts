@@ -5,7 +5,8 @@ export interface DataType {
   address: string;
 }
 
-export interface PatientRecord {
+export interface PatientRecordType {
+  key:string;
   id:string;
   sno:number;
   patientName:string;
@@ -15,6 +16,6 @@ export interface PatientRecord {
   date:string;
 }
 
-export type PatientRecordDataIndex = keyof PatientRecord;
+export type PatientDataIndex = keyof PatientRecordType;
 
 export type DataIndex = keyof DataType;

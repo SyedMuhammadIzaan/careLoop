@@ -9,19 +9,19 @@
 // import type { DataType } from '../types/patientTypes';
 
 import { Table } from "antd"
-import type { DataType } from "../types/patientTypes"
+// import type { DataType,PatientRecordType } from "../types/patientTypes"
 
 // type DataIndex = keyof DataType;
-interface TableCompProps {
-  tableData: DataType[];
+interface TableCompProps<T> {
+  tableData: T[];
   columns: any[];
 }
 
-const TableComp: React.FC<TableCompProps> = ({ tableData, columns }) => {
+const TableComp =<T,> ({ tableData, columns }:TableCompProps<T>) => {
     
     return (
         <>
-            <Table<DataType> columns={columns} dataSource={tableData} />
+            <Table<T> columns={columns} dataSource={tableData} />
         </>
     )
 }
