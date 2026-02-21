@@ -4,12 +4,14 @@ import type { FilterDropdownProps } from "antd/es/table/interface";
 import { Button, Input, Space } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import Highlighter from "react-highlight-words";
-import type { DataIndex, DataType } from "../types/patientTypes";
+import type { DataIndex, DataType,  } from "../types/patientTypes";
 
 export const useTableSearch = () => {
     const searchInput = useRef<InputRef>(null);
     const [searchText, setSearchText] = useState('');
     const [searchedColumn, setSearchedColumn] = useState('');
+    
+  
 
     const handleSearch = (
         selectedKeys: string[],

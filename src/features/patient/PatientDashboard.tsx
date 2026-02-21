@@ -1,12 +1,25 @@
-// import React from 'react'
+// import React, { useState } from 'react'
 import { Button, Space } from 'antd'
 import type { ColumnType } from 'antd/es/table'
 import TableComp from '../../components/TableComp'
 import { patientRecordData } from '../../constants/patientRecord'
 import type { ActionHandler } from '../../interface/TableActionInterface.ts';
 import type { PatientRecordType } from '../../types/patientTypes.ts';
-import { handleDelete, handleEdit } from '../../handlers/tableHandler.tsx';
+import { useState } from 'react';
+
 const PatientDashboard = () => {
+  const [tableData, setTableData] = useState<PatientRecordType[]>(patientRecordData);
+
+  const handleEdit = (record: PatientRecordType) => {
+    console.log("Edit record", record);
+  }
+
+  const handleDelete = (record: PatientRecordType) => {
+    console.log("Delete record", record);
+    const filterData = tableData.filter((item: PatientRecordType) => item.key !== record.key)
+    setTableData(filterData);
+  }
+
   const getPatientRecordColumns = ({ onEdit, onDelete }: ActionHandler): ColumnType<PatientRecordType>[] => [
     {
       title: "S.No",
