@@ -5,14 +5,29 @@ import TableComp from '../../components/TableComp'
 import { patientRecordData } from '../../constants/patientRecord'
 import type { ActionHandler } from '../../interface/TableActionInterface.ts';
 import type { PatientRecordType } from '../../types/patientTypes.ts';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
+import ModalComp from '../../components/Modal.tsx';
 
 const PatientDashboard = () => {
   const [tableData, setTableData] = useState<PatientRecordType[]>(patientRecordData);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [selectedRecord, setSelectedRecord] = useState<PatientRecordType | null>(null);
 
-  const handleEdit = (record: PatientRecordType) => {
+  const handleEdit = useCallback((record: PatientRecordType) => {
     console.log("Edit record", record);
-  }
+    setIsModalOpen(true);
+  }, [])
+
+  const handleOk = useCallback(() => {
+    setTimeout(() => {
+      setIsModalOpen(false);
+    }, 2000);
+  }, []);
+
+  const handleModalClose = useCallback(() => {
+    setIsModalOpen(false);
+    setSelectedRecord(null);
+  }, [])
 
   const handleDelete = (record: PatientRecordType) => {
     console.log("Delete record", record);
@@ -79,6 +94,7 @@ const PatientDashboard = () => {
       </div>
       <div className="patient-record-data">
         <TableComp tableData={patientRecordData} columns={columns} />
+        <ModalComp open={isModalOpen} onOk={handleOk} onCancel={handleModalClose} />
       </div>
     </div>
   )
