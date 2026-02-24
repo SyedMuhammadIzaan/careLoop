@@ -22,7 +22,7 @@ const PatientDashboard = () => {
   const handleOk = useCallback(() => {
     setTimeout(() => {
       setIsModalOpen(false);
-    }, 2000);
+    }, 1000);
   }, []);
 
   const handleModalClose = useCallback(() => {
@@ -93,7 +93,7 @@ const PatientDashboard = () => {
         <h3>Patient Record</h3>
       </div>
       <div className="patient-record-data">
-        <TableComp tableData={patientRecordData} columns={columns} />
+        <TableComp tableData={tableData} columns={columns} />
         <ModalComp open={isModalOpen} data={selectedRecord} onOk={handleOk} onCancel={handleModalClose} />
       </div>
     </div>
