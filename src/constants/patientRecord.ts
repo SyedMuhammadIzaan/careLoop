@@ -29,7 +29,7 @@ export const data: DataType[] = [
 
 export const patientRecordData: PatientRecordType[] = [
   {
-    key: "1",
+    key: '1',
     sno: 1,
     id: "20250102",
     patientName: "John Doe",
@@ -39,7 +39,7 @@ export const patientRecordData: PatientRecordType[] = [
     date: "2025-01-02",
   },
   {
-    key: "2",
+    key: '2',
     sno: 2,
     id: "20250103",
     patientName: "Jane Smith",
@@ -49,7 +49,7 @@ export const patientRecordData: PatientRecordType[] = [
     date: "2025-01-03",
   },
   {
-    key: "3",
+    key: '3',
     sno: 3,
     id: "20250104",
     patientName: "Alice Johnson",
@@ -59,7 +59,7 @@ export const patientRecordData: PatientRecordType[] = [
     date: "2025-01-04",
   },
   {
-    key: "4",
+    key: '4',
     sno: 4,
     id: "20250105",
     patientName: "Bob Brown",
@@ -69,7 +69,7 @@ export const patientRecordData: PatientRecordType[] = [
     date: "2025-01-05",
   },
   {
-    key: "5",
+    key: '5',
     sno: 5,
     id: "20250106",
     patientName: "Charlie Davis",
