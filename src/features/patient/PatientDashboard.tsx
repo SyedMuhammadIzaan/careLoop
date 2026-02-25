@@ -67,11 +67,6 @@ const PatientDashboard = () => {
       key: 'gender',
     },
     {
-      title: "Diagnosis",
-      dataIndex: 'diagnosis',
-      key: 'diagnosis',
-    },
-    {
       title: "Date",
       dataIndex: 'date',
       key: 'date',
@@ -93,11 +88,11 @@ const PatientDashboard = () => {
     onDelete: handleDelete,
   })
   return (
-    <div className='patient-container border-2 border-green-600 w-full h-full'>
+    <div className='patient-container w-full h-full'>
       <div>
-        <h3>Patient Record</h3>
+        <h3 className='text-2xl font-bold mb-3'>Patient Record</h3>
       </div>
-      <div className="patient-record-data">
+      <div className="patient-record-data overflow-auto ">
         <TableComp tableData={tableData} columns={columns} />
         <ModalComp title="Patient Details" open={isModalOpen} data={selectedRecord} onOk={handleOk} onCancel={handleModalClose} />
       </div>
