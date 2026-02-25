@@ -24,6 +24,7 @@ export const getItem = (
 export const sidebarMenuItems: MenuItem[] = [
   getItem('Dashboard', '1', <PieChartOutlined />),
   getItem('Patients', '2', <DesktopOutlined />),
-  getItem('Doctors', '3', <UserOutlined />),
-  getItem('Staff', '4', <FileOutlined />),
+  getItem('Attendance', '3', <UserOutlined />),
+  getItem('Profile', '4', <FileOutlined />),
+  getItem('Staff', '5', <FileOutlined />),
 ];
