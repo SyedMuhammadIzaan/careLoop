@@ -5,14 +5,21 @@ export interface DataType {
   address: string;
 }
 
+export interface VisitStatus{
+  date:string;
+  diagnosis:string;
+  status:string;
+}
+
 export interface PatientRecordType {
   key:string;
   id:string;
   sno:number;
   patientName:string;
+  doctorName:string;
   age:number;
   gender:string;
-  diagnosis:string;
+  visits:VisitStatus[];
   date:string;
 }
 

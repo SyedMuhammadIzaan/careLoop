@@ -52,6 +52,11 @@ const PatientDashboard = () => {
       key: 'patientName',
     },
     {
+      title: "Doctor Name",
+      dataIndex: 'doctorName',
+      key: 'doctorName',
+    },
+    {
       title: "Age",
       dataIndex: 'age',
       key: 'age',
@@ -94,7 +99,7 @@ const PatientDashboard = () => {
       </div>
       <div className="patient-record-data">
         <TableComp tableData={tableData} columns={columns} />
-        <ModalComp open={isModalOpen} data={selectedRecord} onOk={handleOk} onCancel={handleModalClose} />
+        <ModalComp title="Patient Details" open={isModalOpen} data={selectedRecord} onOk={handleOk} onCancel={handleModalClose} />
       </div>
     </div>
   )

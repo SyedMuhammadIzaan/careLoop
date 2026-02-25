@@ -33,9 +33,14 @@ export const patientRecordData: PatientRecordType[] = [
     sno: 1,
     id: "20250102",
     patientName: "John Doe",
+    doctorName: "Dr. Smith",
     age: 30,
     gender: "Male",
-    diagnosis: "Flu",
+    visits: [{
+      date: "2025-01-02",
+      diagnosis: "Flu",
+      status: "Recovered",
+    }],
     date: "2025-01-02",
   },
   {
@@ -43,9 +48,16 @@ export const patientRecordData: PatientRecordType[] = [
     sno: 2,
     id: "20250103",
     patientName: "Jane Smith",
+    doctorName: "Dr. Johnson",
     age: 25,
     gender: "Male",
-    diagnosis: "Cold",
+    visits: [
+      {
+        date: "2025-01-03",
+        diagnosis: "Cold",
+        status: "Under Treatment",
+      }
+    ],
     date: "2025-01-03",
   },
   {
@@ -53,9 +65,16 @@ export const patientRecordData: PatientRecordType[] = [
     sno: 3,
     id: "20250104",
     patientName: "Alice Johnson",
+    doctorName: "Dr. Lee",
     gender: "Male",
     age: 28,
-    diagnosis: "Allergy",
+    visits: [
+      {
+        date: "2025-01-04",
+        diagnosis: "Allergy",
+        status: "Recovered",
+      }
+    ],
     date: "2025-01-04",
   },
   {
@@ -63,9 +82,16 @@ export const patientRecordData: PatientRecordType[] = [
     sno: 4,
     id: "20250105",
     patientName: "Bob Brown",
+    doctorName: "Dr. Wilson",
     age: 35,
     gender: "Male",
-    diagnosis: "Headache",
+    visits: [
+      {
+        date: "2025-01-05",
+        diagnosis: "Headache",
+        status: "Under Treatment",
+      }
+    ],
     date: "2025-01-05",
   },
   {
@@ -73,9 +99,16 @@ export const patientRecordData: PatientRecordType[] = [
     sno: 5,
     id: "20250106",
     patientName: "Charlie Davis",
+    doctorName: "Dr. Taylor",
     gender: "Male",
     age: 40,
-    diagnosis: "Back Pain",
+    visits: [
+      {
+        date: "2025-01-06",
+        diagnosis: "Back Pain",
+        status: "Under Treatment",
+      }
+    ],
     date: "2025-01-06",
   },
 ];
