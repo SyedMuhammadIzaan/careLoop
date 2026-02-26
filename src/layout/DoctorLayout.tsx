@@ -8,6 +8,7 @@ import type { SidebarProps } from '../interface/SidebarProps';
 import { sidebarMenuItems } from '../constants/menuItems';
 import DoctorDashboard from '../features/doctor/DoctorDashboard';
 import PatientDashboard from '../features/patient/PatientDashboard';
+import MyProfile from '../features/profile/myProfile';
 const { Header, Content, Sider } = Layout
 
 
@@ -48,7 +49,8 @@ const DoctorLayout: React.FC<SidebarProps> = ({ collapsed, onCollapse }) => {
                     >
                         <div className='w-full max-w-[1200px] mx-auto px-4 md:px-1 py-1'>
                             {/* <DoctorDashboard /> */}
-                            <PatientDashboard />
+                            {/* <PatientDashboard /> */}
+                            <MyProfile />
                         </div>
                     </Content>
 
