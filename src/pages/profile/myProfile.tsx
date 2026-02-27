@@ -1,20 +1,32 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { Upload } from 'antd'
 import { DeleteOutlined, LoadingOutlined, PlusOutlined } from '@ant-design/icons'
 import { beforeUpload, getBase64 } from '../../handlers/uploadImageHandler'
 import type { RcFile } from 'antd/es/upload';
 import { profileData } from '../../constants/profileData';
 import type { Profile } from '../../interface/profileInterface';
+import Modal from '../../components/Modal';
 const MyProfile = () => {
     const [loading, setLoading] = useState(false);
     const [imageUrl, setImageUrl] = useState<string>();
     const [profile, setProfile] = useState<Profile[]>(profileData); // Assuming you want to display the first profile
     const [slots, setSlots] = useState<string[]>(['']);
-    console.log("Selected Slots:",slots);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    console.log("Selected Slots:", slots);
 
-    const openModal=()=>{
-
+    const openModal = () => {
+        setIsModalOpen(true)
     }
+    const handleOk = useCallback(() => {
+        setTimeout(() => {
+            setIsModalOpen(false);
+        }, 1000);
+    }, []);
+
+    const handleModalClose = useCallback(() => {
+        setIsModalOpen(false);
+    }, [])
+    console.log("Modal",isModalOpen)
     const handleChange = async (info: any) => {
         const file = info.file.originFileObj as RcFile
         if (!file) return
@@ -38,7 +50,10 @@ const MyProfile = () => {
 
     return (
         <div className='profile-container border-2 border-gray-300 rounded-lg p-4 w-full h-full'>
-            <button className='bg-blue-500 text-white px-4 py-2 rounded-lg mb-4' onClick={()=>{openModal}}>Edit Profile</button>
+            <button className='bg-blue-500 text-white px-4 py-2 rounded-lg mb-4' onClick={() => {openModal()}}>Edit Profile</button>
+            {
+                isModalOpen ? <Modal open={isModalOpen} onOk={handleOk} onCancel={handleModalClose} /> : ''
+            }
             <div className='profile-content border-2 border-green-500 grid grid-cols-1 gap-4 md:grid-cols-2 w-full h-full'>
                 <div className="profile-image-wrapper border-2 border-blue-500 flex items-center justify-center ">
                     <div className='w-48 h-48'>
