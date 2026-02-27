@@ -16,7 +16,7 @@ export const profileData: Profile[] = [
       "Experienced cardiologist specializing in heart diseases, hypertension, and preventive cardiology.",
     languages: ["English", "Urdu"],
     availableDays: ["Monday", "Wednesday", "Friday"],
-    availableSlots: ["10:00 AM", "11:00 AM", "02:00 PM", "04:00 PM"],
+    availableSlots: ["10:00 AM - 1:00 PM", "10:00 AM - 2:00 PM", "1:45 AM - 3:45 PM", "6:45 AM - 9:45 PM","7:30 AM - 10:30 PM"],
     image: "/doctors/ahmed.jpg",
   },
 ];
