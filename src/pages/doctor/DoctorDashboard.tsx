@@ -1,11 +1,11 @@
 // import React from 'react'
 import type { TableColumnsType } from "antd";
-import PieChartComp from "../../components/charts/PieChart";
-import StatisticComp from "../../components/Statistic";
-import TableComp from "../../components/TableComp";
+import PieChartComp from "../../components/charts/PieChart.tsx";
+import StatisticComp from "../../components/Statistic.tsx";
+import TableComp from "../../components/TableComp.tsx";
 import { data } from "../../constants/patientRecord.ts"
 import type { DataType } from "../../types/patientTypes.ts";
-import { useTableSearch } from "../../hooks/useTableSearch";
+import { useTableSearch } from "../../hooks/useTableSearch.tsx";
 
 const DoctorDashboard = () => {
   const { getColumnSearchProps } = useTableSearch();

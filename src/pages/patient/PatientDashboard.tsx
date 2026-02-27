@@ -1,8 +1,8 @@
 // import React, { useState } from 'react'
 import { Button, Space } from 'antd'
 import type { ColumnType } from 'antd/es/table'
-import TableComp from '../../components/TableComp'
-import { patientRecordData } from '../../constants/patientRecord'
+import TableComp from '../../components/TableComp.tsx'
+import { patientRecordData } from '../../constants/patientRecord.ts'
 import type { ActionHandler } from '../../interface/TableActionInterface.ts';
 import type { PatientRecordType } from '../../types/patientTypes.ts';
 import { useCallback, useState } from 'react';
