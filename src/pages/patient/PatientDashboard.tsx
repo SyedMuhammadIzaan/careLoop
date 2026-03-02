@@ -12,7 +12,7 @@ const PatientDashboard = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedRecord, setSelectedRecord] = useState<PatientRecordType | null>(null);
   const [tableData, setTableData] = useState<PatientRecordType[]>(patientRecordData);
-  
+  const [modalType,setModalType] = useState<"patient" | "doctor" | null>(null)
   const handleEdit = useCallback((record: PatientRecordType) => {
     console.log("Edit record", record);
     setSelectedRecord(record);
@@ -21,6 +21,7 @@ const PatientDashboard = () => {
 
   const handleOk = useCallback(() => {
     setTimeout(() => {
+      setModalType("patient");
       setIsModalOpen(false);
     }, 1000);
   }, []);
@@ -94,7 +95,7 @@ const PatientDashboard = () => {
       </div>
       <div className="patient-record-data overflow-auto ">
         <TableComp tableData={tableData} columns={columns} />
-        <ModalComp title="Patient Details" open={isModalOpen} data={selectedRecord} onOk={handleOk} onCancel={handleModalClose} />
+        <ModalComp type={modalType} title="Patient Details" open={isModalOpen} data={selectedRecord} onOk={handleOk} onCancel={handleModalClose} />
       </div>
     </div>
   )
