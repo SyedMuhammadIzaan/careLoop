@@ -14,14 +14,14 @@ const MyProfile = () => {
     const [profile, setProfile] = useState<Profile[]>(profileData); // Assuming you want to display the first profile
     const [slots, setSlots] = useState<string[]>(['']);
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-    console.log("Selected Slots:", slots);
-    console.log("Profile Data:", profile)
+    // console.log("Selected Slots:", slots);
+    // console.log("Profile Data:", profile)
     const openModal = () => {
         setModalType("doctor");
         setIsModalOpen(true)
     }
     const handleOk = useCallback((updatedProfile: Profile) => {
-        console.log("Updated Profile:", updatedProfile);
+        // console.log("Updated Profile:", updatedProfile);
         setProfile((prevProfile) => prevProfile.map(p => p.id === updatedProfile.id ? updatedProfile : p));
         setTimeout(() => {
             setIsModalOpen(false);
