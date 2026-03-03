@@ -6,6 +6,7 @@ import type { RcFile } from 'antd/es/upload';
 import { profileData } from '../../constants/profileData';
 import type { Profile } from '../../interface/profileInterface';
 import Modal from '../../components/Modal';
+
 const MyProfile = () => {
     const [loading, setLoading] = useState(false);
     const [modalType, setModalType] = useState<"patient" | "doctor" | null>(null)
@@ -14,12 +15,14 @@ const MyProfile = () => {
     const [slots, setSlots] = useState<string[]>(['']);
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     console.log("Selected Slots:", slots);
-
+    console.log("Profile Data:", profile)
     const openModal = () => {
         setModalType("doctor");
         setIsModalOpen(true)
     }
-    const handleOk = useCallback(() => {
+    const handleOk = useCallback((updatedProfile: Profile) => {
+        console.log("Updated Profile:", updatedProfile);
+        setProfile((prevProfile) => prevProfile.map(p => p.id === updatedProfile.id ? updatedProfile : p));
         setTimeout(() => {
             setIsModalOpen(false);
         }, 1000);
@@ -54,7 +57,7 @@ const MyProfile = () => {
         <div className='profile-container border-2 border-gray-300 rounded-lg p-4 w-full h-full'>
             <button className='bg-blue-500 text-white px-4 py-2 rounded-lg mb-4' onClick={() => { openModal() }}>Edit Profile</button>
             {
-                isModalOpen ? <Modal type={modalType} open={isModalOpen} onOk={handleOk} onCancel={handleModalClose} /> : ''
+                isModalOpen ? <Modal data={profile} type={modalType} open={isModalOpen} onOk={handleOk} onCancel={handleModalClose} /> : ''
             }
             <div className='profile-content border-2 border-green-500 grid grid-cols-1 gap-4 md:grid-cols-2 w-full h-full'>
                 <div className="profile-image-wrapper border-2 border-blue-500 flex items-center justify-center ">
