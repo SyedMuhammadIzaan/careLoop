@@ -6,6 +6,6 @@ export interface ModalProps{
     title?:string;
     open:boolean;
     data?:PatientRecordType | Profile | null;
-    onOk:()=>void;
+    onOk:(updatedProfile:Profile)=>void;
     onCancel:()=>void;
 }

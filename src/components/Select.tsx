@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { memo } from "react";
+import { Select } from "antd"
+import type { InputProps } from "../interface/InputInterface"
 
-const SelectComp = () => {
+const SelectComp:React.FC<InputProps> = ({placeholder, value, onChange,options}) => {
+  console.log("PlaceHolder", options)
+  const handleChange = (selectedValue: string | number | null) => {
+    if (onChange) {
+      onChange(selectedValue as any);
+    }
+  };
+
   return (
-    <div>SelectComp</div>
+    <>
+      <Select style={{width:170}} className="" allowClear placeholder={placeholder} value={value} options={options} onChange={handleChange} />
+    </>
   )
 }
 
-export default SelectComp
+export default memo(SelectComp)

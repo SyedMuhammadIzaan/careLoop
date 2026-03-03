@@ -31,7 +31,8 @@ const MyProfile = () => {
     const handleModalClose = useCallback(() => {
         setIsModalOpen(false);
     }, [])
-    console.log("Modal", isModalOpen)
+
+    // console.log("Modal", isModalOpen)
     const handleChange = async (info: any) => {
         const file = info.file.originFileObj as RcFile
         if (!file) return
@@ -57,7 +58,7 @@ const MyProfile = () => {
         <div className='profile-container border-2 border-gray-300 rounded-lg p-4 w-full h-full'>
             <button className='bg-blue-500 text-white px-4 py-2 rounded-lg mb-4' onClick={() => { openModal() }}>Edit Profile</button>
             {
-                isModalOpen ? <Modal data={profile} type={modalType} open={isModalOpen} onOk={handleOk} onCancel={handleModalClose} /> : ''
+                isModalOpen ? <Modal data={profile[0]} type={modalType} open={isModalOpen} onOk={handleOk} onCancel={handleModalClose} /> : ''
             }
             <div className='profile-content border-2 border-green-500 grid grid-cols-1 gap-4 md:grid-cols-2 w-full h-full'>
                 <div className="profile-image-wrapper border-2 border-blue-500 flex items-center justify-center ">
