@@ -1,16 +1,17 @@
 import { useCallback, useState } from 'react'
-import { Upload } from 'antd'
-import { DeleteOutlined, LoadingOutlined, PlusOutlined } from '@ant-design/icons'
-import { beforeUpload, getBase64 } from '../../handlers/uploadImageHandler'
-import type { RcFile } from 'antd/es/upload';
+// import { Upload } from 'antd'
+// import { DeleteOutlined, LoadingOutlined, PlusOutlined } from '@ant-design/icons'
+// import { beforeUpload, getBase64 } from '../../handlers/uploadImageHandler'
+// import type { RcFile } from 'antd/es/upload';
 import { profileData } from '../../constants/profileData';
 import type { Profile } from '../../interface/profileInterface';
 import Modal from '../../components/Modal';
+import UploadComp from '../../components/Upload';
 
 const MyProfile = () => {
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
     const [modalType, setModalType] = useState<"patient" | "doctor" | null>(null)
-    const [imageUrl, setImageUrl] = useState<string>();
+    // const [imageUrl, setImageUrl] = useState<string>();
     const [profile, setProfile] = useState<Profile[]>(profileData); // Assuming you want to display the first profile
     const [slots, setSlots] = useState<string[]>(['']);
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -33,26 +34,26 @@ const MyProfile = () => {
     }, [])
 
     // console.log("Modal", isModalOpen)
-    const handleChange = async (info: any) => {
-        const file = info.file.originFileObj as RcFile
-        if (!file) return
+    // const handleChange = async (info: any) => {
+    //     const file = info.file.originFileObj as RcFile
+    //     if (!file) return
 
-        setLoading(true)
-        const base64 = await getBase64(file)
-        setImageUrl(base64)
-        setLoading(false)
-    }
+    //     setLoading(true)
+    //     const base64 = await getBase64(file)
+    //     setImageUrl(base64)
+    //     setLoading(false)
+    // }
 
-    const handleRemove = () => {
-        setImageUrl(undefined);
-    };
+    // const handleRemove = () => {
+    //     setImageUrl(undefined);
+    // };
 
-    const uploadButton = (
-        <div className="flex flex-col items-center justify-center">
-            {loading ? <LoadingOutlined /> : <PlusOutlined />}
-            <div className="mt-2">Upload</div>
-        </div>
-    );
+    // const uploadButton = (
+    //     <div className="flex flex-col items-center justify-center">
+    //         {loading ? <LoadingOutlined /> : <PlusOutlined />}
+    //         <div className="mt-2">Upload</div>
+    //     </div>
+    // );
 
     return (
         <div className='profile-container border-2 border-gray-300 rounded-lg p-4 w-full h-full'>
@@ -63,8 +64,8 @@ const MyProfile = () => {
             <div className='profile-content border-2 border-green-500 grid grid-cols-1 gap-4 md:grid-cols-2 w-full h-full'>
                 <div className="profile-image-wrapper border-2 border-blue-500 flex items-center justify-center ">
                     <div className='w-48 h-48'>
-
-                        <Upload
+                        <UploadComp />
+                        {/* <Upload
                             name="avatar"
                             listType="picture-card"
                             showUploadList={false} // ⭐ IMPORTANT
@@ -95,7 +96,7 @@ const MyProfile = () => {
                             ) : (
                                 uploadButton
                             )}
-                        </Upload>
+                        </Upload> */}
                     </div>
                 </div>
 

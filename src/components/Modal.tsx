@@ -8,6 +8,7 @@ import InputComp from './Input'
 import SelectComp from './Select'
 import type { Profile } from '../interface/profileInterface'
 import { QualificationOptions, SpecializationOptions } from '../constants/degreeOptions'
+import UploadComp from './Upload'
 
 const ModalComp: React.FC<ModalProps> = ({ type, title, open, data, onOk, onCancel }) => {
     const [formData, setFormData] = useState<Profile | null>(null);
@@ -70,7 +71,6 @@ const ModalComp: React.FC<ModalProps> = ({ type, title, open, data, onOk, onCanc
                             <InputComp placeholder='Hospital' value={formData?.hospital} onChange={(e) => setFormData({ ...formData!, hospital: e.target.value })} />
                             {/* <InputComp placeholder='Location' value={formData?.location} onChange={(e) => setFormData({ ...formData!, location: e.target.value })} /> */}
                             <InputComp placeholder='Consultation Fee' value={formData?.consultationFee} onChange={(e) => setFormData({ ...formData!, consultationFee: Number(e.target.value) })} />
-                            {/* <SelectComp /> */}
                         </div>
                     </div>}
 
