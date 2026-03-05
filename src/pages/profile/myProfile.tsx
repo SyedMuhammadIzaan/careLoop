@@ -61,9 +61,9 @@ const MyProfile = () => {
             {
                 isModalOpen ? <Modal data={profile[0]} type={modalType} open={isModalOpen} onOk={handleOk} onCancel={handleModalClose} /> : ''
             }
-            <div className='profile-content border-2 border-green-500 grid grid-cols-1 gap-4 md:grid-cols-2 w-full h-full'>
-                <div className="profile-image-wrapper border-2 border-blue-500 flex items-center justify-center ">
-                    <div className='w-48 h-48'>
+            <div className='profile-content grid grid-cols-1 gap-4 md:grid-cols-2 w-full h-full'>
+                <div className="profile-image-wrapper w-full h-full flex justify-center">
+                    <div className='w-56 h-56'>
                         <UploadComp />
                         {/* <Upload
                             name="avatar"

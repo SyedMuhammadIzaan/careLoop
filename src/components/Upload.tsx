@@ -39,7 +39,8 @@ const UploadComp:React.FC<UploadProp> = ({src}) => {
                 beforeUpload={beforeUpload}
                 onChange={handleChange}
                 maxCount={1} // prevents multiple images
-                className='w-full h-full'
+                className='!w-full !h-full'
+                style={{width:"100%",height:"100%"}}
             >
                 {imageUrl ? (
                     <div className="relative w-full h-full">
