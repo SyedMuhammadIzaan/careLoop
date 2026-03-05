@@ -105,7 +105,7 @@ const MyProfile = () => {
                     {
                         profile ? (
                             profile.map((data) => (
-                                <div key={data.id} className='p-0 p-4'>
+                                <div key={data.id} className='py-0 px-4'>
                                     <h2 className='text-3xl font-bold mb-2'>{data.name}</h2>
                                     <p className='text-gray-600 mb-1'>{data.about}</p>
                                     <p className='text-gray-600 mb-1'><strong>Specialization:</strong> {data.specialization}</p>

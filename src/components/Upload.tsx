@@ -5,7 +5,7 @@ import { DeleteOutlined, LoadingOutlined, PlusOutlined } from '@ant-design/icons
 import { beforeUpload, getBase64 } from '../handlers/uploadImageHandler'
 import type { UploadProp } from '../interface/UploadInterface';
 
-const UploadComp:React.FC<UploadProp> = ({src}) => {
+const UploadComp:React.FC<UploadProp> = () => {
     const [loading, setLoading] = useState(false);
     const [imageUrl, setImageUrl] = useState<string>();
 
