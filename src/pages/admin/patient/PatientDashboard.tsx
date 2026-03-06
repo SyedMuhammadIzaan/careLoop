@@ -1,12 +1,12 @@
 // import React, { useState } from 'react'
 import { Button, Space } from 'antd'
 import type { ColumnType } from 'antd/es/table'
-import TableComp from '../../components/TableComp.tsx'
-import { patientRecordData } from '../../constants/patientRecord.ts'
-import type { ActionHandler } from '../../interface/TableActionInterface.ts';
-import type { PatientRecordType } from '../../types/patientTypes.ts';
+import TableComp from '../../../components/common/TableComp.tsx'
+import { patientRecordData } from '../../../constants/patientRecord.ts'
+import type { ActionHandler } from '../../../interface/TableActionInterface.ts';
+import type { PatientRecordType } from '../../../types/patientTypes.ts';
 import { useCallback, useState } from 'react';
-import ModalComp from '../../components/Modal.tsx';
+import ModalComp from '../../../components/common/Modal.tsx';
 
 const PatientDashboard = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);

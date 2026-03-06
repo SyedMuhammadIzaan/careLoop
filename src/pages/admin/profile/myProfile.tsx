@@ -3,19 +3,17 @@ import { useCallback, useState } from 'react'
 // import { DeleteOutlined, LoadingOutlined, PlusOutlined } from '@ant-design/icons'
 // import { beforeUpload, getBase64 } from '../../handlers/uploadImageHandler'
 // import type { RcFile } from 'antd/es/upload';
-import { profileData } from '../../constants/profileData';
-import type { Profile } from '../../interface/profileInterface';
-import Modal from '../../components/Modal';
-import UploadComp from '../../components/Upload';
+import { profileData } from '../../../constants/profileData';
+import type { Profile } from '../../../interface/profileInterface';
+import Modal from '../../../components/common/Modal';
+import UploadComp from'../../../components/common/Upload.tsx';
 
 const MyProfile = () => {
-    // const [loading, setLoading] = useState(false);
     const [modalType, setModalType] = useState<"patient" | "doctor" | null>(null)
-    // const [imageUrl, setImageUrl] = useState<string>();
     const [profile, setProfile] = useState<Profile[]>(profileData); // Assuming you want to display the first profile
     const [slots, setSlots] = useState<string[]>(['']);
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-    // console.log("Selected Slots:", slots);
+    console.log("Selected Slots:", slots);
     // console.log("Profile Data:", profile)
     const openModal = () => {
         setModalType("doctor");

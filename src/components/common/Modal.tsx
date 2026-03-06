@@ -1,14 +1,14 @@
 import React, { memo, useEffect, useState } from 'react'
-import type { ModalProps } from '../interface/ModalInterface'
+import type { ModalProps } from '../../interface/ModalInterface'
 import { Modal } from 'antd'
 import TableComp from './TableComp'
 import type { ColumnType } from 'antd/es/table'
-import type { PatientRecordType } from '../types/patientTypes'
+import type { PatientRecordType } from '../../types/patientTypes'
 import InputComp from './Input'
-import SelectComp from './Select'
-import type { Profile } from '../interface/profileInterface'
-import { QualificationOptions, SpecializationOptions } from '../constants/degreeOptions'
-import UploadComp from './Upload'
+import SelectComp from '../Select'
+import type { Profile } from '../../interface/profileInterface'
+import { QualificationOptions, SpecializationOptions } from '../../constants/degreeOptions'
+import UploadComp from '../Upload'
 
 const ModalComp: React.FC<ModalProps> = ({ type, title, open, data, onOk, onCancel }) => {
     const [formData, setFormData] = useState<Profile | null>(null);

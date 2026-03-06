@@ -6,9 +6,9 @@ import {
 import { Button, Layout, Menu, theme } from 'antd';
 import type { SidebarProps } from '../interface/SidebarProps';
 import { sidebarMenuItems } from '../constants/menuItems';
-import DoctorDashboard from '../pages/doctor/DoctorDashboard';
-import PatientDashboard from '../pages/patient/PatientDashboard';
-import MyProfile from '../pages/profile/myProfile';
+import DoctorDashboard from '../pages/admin/doctor/DoctorDashboard';
+import PatientDashboard from '../pages/admin/patient/PatientDashboard';
+import MyProfile from '../pages/admin/profile/myProfile';
 const { Header, Content, Sider } = Layout
 
 
