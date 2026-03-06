@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import DoctorLayout from './layout/DoctorLayout';
+// import DoctorLayout from './layout/DoctorLayout';
 import Navbar from './components/client/Navbar';
+import Herobanner from './components/client/Herobanner.tsx';
+import Home from './pages/client/Home.tsx';
 
-const App:React.FC=()=> {
+const App: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
@@ -10,7 +12,13 @@ const App:React.FC=()=> {
     //   collapsed={collapsed}
     //   onCollapse={setCollapsed}
     // />
-    <Navbar />
+    <>
+    <Home />
+      {/* <Navbar />
+      <div className='herobanner-container w-full'>
+        <Herobanner />
+      </div> */}
+    </>
   );
 }
 

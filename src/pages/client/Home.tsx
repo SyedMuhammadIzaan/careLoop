@@ -8,7 +8,7 @@ const Home = () => {
       <div className='navbar-container border-2 border-slate-600 w-full'>
         <Navbar />
       </div>
-      <div className='herobanner-container'>
+      <div className='herobanner-container w-full h-full max-w-[1200px] mx-auto box-border'>
         <Herobanner />
       </div>
       <div className="doctor-container">
