@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { Upload } from 'antd';
 import type { RcFile } from 'antd/es/upload';
 import { DeleteOutlined, LoadingOutlined, PlusOutlined } from '@ant-design/icons'
-import { beforeUpload, getBase64 } from '../handlers/uploadImageHandler'
-import type { UploadProp } from '../interface/UploadInterface';
+import {  beforeUpload,getBase64 } from '../../handlers/uploadImageHandler';
+import type { UploadProp } from '../../interface/UploadInterface';
 
 const UploadComp:React.FC<UploadProp> = () => {
     const [loading, setLoading] = useState(false);
