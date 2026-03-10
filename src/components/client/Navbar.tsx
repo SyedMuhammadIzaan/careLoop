@@ -1,39 +1,68 @@
-// import React from 'react'
-import { ConfigProvider, Flex, Menu } from 'antd'
-import { menuItems } from '../../constants/client/menuItem'
-import CreateAccountBtn from './CreateAccountBtn'
+import { Flex, Menu, ConfigProvider, Drawer, Button } from "antd";
+import { MenuOutlined } from "@ant-design/icons";
+import { useState } from "react";
+import { menuItems } from "../../constants/client/menuItem";
+import CreateAccountBtn from "./CreateAccountBtn";
 
 const Navbar = () => {
+    const [open, setOpen] = useState(false);
+
     return (
-        <div className='w-full border-2 border-green-500 p-2'>
-            <Flex className='w-full' justify='space-evenly' align='center'>
+        <div className="w-full border-2 border-green-500 px-4 py-2">
+
+            <Flex justify="space-between" align="center">
+
+                {/* Logo */}
                 <div className="logo-container">
-                    <h1 className='text-2xl font-bold text-blue-600'>MediCare</h1>
+                    <h1 className="text-2xl font-bold text-blue-600">MediCare</h1>
                 </div>
-                <ConfigProvider
-                    theme={{
-                        components: {
-                            Menu: {
-                                popupBg: '#fff',
-                                horizontalItemSelectedColor: '#1677ff',
-                                horizontalItemHoverColor: '#1677ff',
+
+                {/* Desktop Menu */}
+                <div className="hidden md:flex items-center gap-6">
+                    <ConfigProvider
+                        theme={{
+                            components: {
+                                Menu: {
+                                    popupBg: "#fff",
+                                    horizontalItemSelectedColor: "#1677ff",
+                                    horizontalItemHoverColor: "#1677ff",
+                                },
                             },
-                            Typography: {
-                                titleMarginBottom: 0,
-                                titleMarginTop: 0,
-                            },
-                        },
-                    }}
-                >
-                    <Menu mode='horizontal' items={menuItems} style={{
-                        width:'auto'
-                    }} />
+                        }}
+                    >
+                        <Menu
+                            mode="horizontal"
+                            items={menuItems}
+                            style={{ borderBottom: "none" }}
+                        />
+                    </ConfigProvider>
 
                     <CreateAccountBtn />
-                </ConfigProvider>
-            </Flex>
-        </div>
-    )
-}
+                </div>
 
-export default Navbar
+                {/* Mobile Menu Button */}
+                <div className="md:hidden flex items-center gap-3">
+                    <CreateAccountBtn />
+
+                    <Button
+                        type="text"
+                        icon={<MenuOutlined />}
+                        onClick={() => setOpen(true)}
+                    />
+                </div>
+            </Flex>
+
+            {/* Mobile Drawer Menu */}
+            <Drawer
+                title="Menu"
+                placement="right"
+                onClose={() => setOpen(false)}
+                open={open}
+            >
+                <Menu mode="vertical" items={menuItems} />
+            </Drawer>
+        </div>
+    );
+};
+
+export default Navbar;

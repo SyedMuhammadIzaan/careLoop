@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 // import DoctorLayout from './layout/DoctorLayout';
-import Navbar from './components/client/Navbar';
 import Herobanner from './components/client/Herobanner.tsx';
 import Home from './pages/client/Home.tsx';
 
