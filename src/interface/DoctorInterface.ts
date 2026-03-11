@@ -14,4 +14,5 @@ export interface Doctor{
     availableDays:string[];
     availableSlots:string[];
     image:string;
+    status:string;
 }

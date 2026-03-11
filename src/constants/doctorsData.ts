@@ -18,9 +18,10 @@ export const doctorsData:Doctor[] = [
     availableDays: ["Tuesday", "Thursday", "Saturday"],
     availableSlots: ["9:00 AM - 12:00 PM", "2:00 PM - 5:00 PM"],
     image: "/doctors/sarah.jpg",
-  },
+    status: "Available",
+},
 
-  {
+{
     id: "DOC003",
     name: "Dr. Bilal Ahmed",
     specialization: "Neurologist",
@@ -32,14 +33,15 @@ export const doctorsData:Doctor[] = [
     rating: 4.9,
     totalReviews: 412,
     about:
-      "Expert in neurological disorders including epilepsy, stroke, migraines, and nerve diseases.",
+    "Expert in neurological disorders including epilepsy, stroke, migraines, and nerve diseases.",
     languages: ["English", "Urdu"],
     availableDays: ["Monday", "Thursday"],
     availableSlots: ["11:00 AM - 2:00 PM", "4:00 PM - 7:00 PM"],
     image: "/doctors/bilal.jpg",
-  },
+    status: "Available",
+},
 
-  {
+{
     id: "DOC004",
     name: "Dr. Fatima Noor",
     specialization: "Pediatrician",
@@ -51,14 +53,15 @@ export const doctorsData:Doctor[] = [
     rating: 4.6,
     totalReviews: 195,
     about:
-      "Dedicated pediatrician focusing on child health, vaccination, and developmental care.",
+    "Dedicated pediatrician focusing on child health, vaccination, and developmental care.",
     languages: ["English", "Urdu"],
     availableDays: ["Monday", "Tuesday", "Friday"],
     availableSlots: ["10:00 AM - 1:00 PM", "3:00 PM - 6:00 PM"],
     image: "/doctors/fatima.jpg",
-  },
+    status: "Available",
+},
 
-  {
+{
     id: "DOC005",
     name: "Dr. Hassan Ali",
     specialization: "Orthopedic Surgeon",
@@ -70,14 +73,15 @@ export const doctorsData:Doctor[] = [
     rating: 4.8,
     totalReviews: 276,
     about:
-      "Orthopedic surgeon specializing in bone fractures, joint replacements, and sports injuries.",
+    "Orthopedic surgeon specializing in bone fractures, joint replacements, and sports injuries.",
     languages: ["English", "Urdu"],
     availableDays: ["Wednesday", "Friday", "Saturday"],
     availableSlots: ["9:30 AM - 12:30 PM", "5:00 PM - 8:00 PM"],
     image: "/doctors/hassan.jpg",
-  },
+    status: "Available",
+},
 
-  {
+{
     id: "DOC006",
     name: "Dr. Ayesha Siddiqui",
     specialization: "Gynecologist",
@@ -89,14 +93,15 @@ export const doctorsData:Doctor[] = [
     rating: 4.7,
     totalReviews: 305,
     about:
-      "Experienced gynecologist providing care for pregnancy, infertility, and women's health issues.",
+    "Experienced gynecologist providing care for pregnancy, infertility, and women's health issues.",
     languages: ["English", "Urdu"],
     availableDays: ["Monday", "Wednesday", "Saturday"],
     availableSlots: ["10:00 AM - 1:00 PM", "4:00 PM - 7:00 PM"],
     image: "/doctors/ayesha.jpg",
-  },
+    status: "Not Available",
+},
 
-  {
+{
     id: "DOC007",
     name: "Dr. Imran Shah",
     specialization: "ENT Specialist",
@@ -108,14 +113,15 @@ export const doctorsData:Doctor[] = [
     rating: 4.5,
     totalReviews: 168,
     about:
-      "Specialist in ear, nose, and throat diseases including sinus issues and hearing disorders.",
+    "Specialist in ear, nose, and throat diseases including sinus issues and hearing disorders.",
     languages: ["English", "Urdu"],
     availableDays: ["Tuesday", "Thursday"],
     availableSlots: ["11:00 AM - 2:00 PM", "6:00 PM - 9:00 PM"],
     image: "/doctors/imran.jpg",
-  },
+    status: "Available",
+},
 
-  {
+{
     id: "DOC008",
     name: "Dr. Sana Malik",
     specialization: "Psychiatrist",
@@ -127,10 +133,11 @@ export const doctorsData:Doctor[] = [
     rating: 4.6,
     totalReviews: 142,
     about:
-      "Mental health specialist treating anxiety, depression, and stress-related disorders.",
+    "Mental health specialist treating anxiety, depression, and stress-related disorders.",
     languages: ["English", "Urdu"],
     availableDays: ["Wednesday", "Friday"],
     availableSlots: ["12:00 PM - 3:00 PM", "5:00 PM - 8:00 PM"],
     image: "/doctors/sana.jpg",
-  },
+    status: "Available",
+},
 ];
