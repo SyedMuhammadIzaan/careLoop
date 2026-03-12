@@ -12,7 +12,7 @@ import LoadMoreButton from '../../components/client/Doctor/LoadMoreButton'
 
 const Home = () => {
   const [searchDoctor, setSearchDoctor] = useState<string>("");
-  const [filteredDoctorList, setFilteredDoctorList] = useState<Doctor[] | null>();
+  const [filteredDoctorList, setFilteredDoctorList] = useState<Doctor[]>([]);
   const [visibleDoctors, setVisibleDoctors] = useState(6);
   useEffect(() => {
     if (searchDoctor) {
@@ -23,7 +23,7 @@ const Home = () => {
   console.log("Filtered Doctor List", filteredDoctorList)
 
   const doctorsToShow =
-    filteredDoctorList.length > 0 ? filteredDoctorList : doctorsData;
+    filteredDoctorList && filteredDoctorList.length > 0 ? filteredDoctorList : doctorsData;
 
   const visibleList = doctorsToShow.slice(0, visibleDoctors);
   return (
@@ -47,24 +47,24 @@ const Home = () => {
             className="border-2 border-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           /> */}
         </div>
-        <div className='w-full h-full flex flex-wrap gap-6 justify-evenly py-10'>
+        <div className='w-full h-full flex flex-wrap gap-9 justify-evenly py-10'>
           <DoctorList doctors={visibleList} />
-          <LoadMoreButton onClick={() => setVisibleDoctors((prev)=>prev+6)} />
           {/* {
             filteredDoctorList && filteredDoctorList.length > 0 ?
-              filteredDoctorList.map((doctorsData) =>
-                <CardComp key={doctorsData.id} data={doctorsData} />
-              )
-              :
-              doctorsData
-                ?
-                doctorsData.map((doctor) =>
-                  <CardComp key={doctor.id} data={doctor} />
-                )
-                :
-                <p>No doctors available</p>
-          } */}
+            filteredDoctorList.map((doctorsData) =>
+            <CardComp key={doctorsData.id} data={doctorsData} />
+            )
+            :
+            doctorsData
+            ?
+            doctorsData.map((doctor) =>
+            <CardComp key={doctor.id} data={doctor} />
+            )
+            :
+            <p>No doctors available</p>
+            } */}
         </div>
+        <LoadMoreButton onClick={() => setVisibleDoctors((prev) => prev + 6)} />
       </div>
       <div>
 

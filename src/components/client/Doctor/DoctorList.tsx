@@ -1,6 +1,6 @@
 // import React from 'react'
 import type { Doctor } from '../../../interface/DoctorInterface'
-import CardComp from '../../Card/CardComp'
+import CardComp from '../Card'
 
 const DoctorList = ({ doctors }: { doctors: Doctor[] }) => {
   return (
