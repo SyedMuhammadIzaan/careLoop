@@ -2,15 +2,18 @@ import { useEffect, useState } from 'react'
 import Navbar from '../../components/client/Navbar'
 import Herobanner from '../../components/client/Herobanner'
 import { doctorsData } from '../../constants/doctorsData'
-import CardComp from '../../components/client/Card'
+// import CardComp from '../../components/client/Card'
 import { filteredDoctors } from '../../handlers/doctorHandler'
 import type { Doctor } from '../../interface/DoctorInterface'
 import Input from '../../components/common/Input'
+import DoctorList from '../../components/client/Doctor/DoctorList'
+import LoadMoreButton from '../../components/client/Doctor/LoadMoreButton'
 // import type { Doctor } from '../../interface/DoctorInterface'
 
 const Home = () => {
   const [searchDoctor, setSearchDoctor] = useState<string>("");
-  const [filteredDoctorList, setFilteredDoctorList] = useState<Doctor[]>();
+  const [filteredDoctorList, setFilteredDoctorList] = useState<Doctor[] | null>();
+  const [visibleDoctors, setVisibleDoctors] = useState(6);
   useEffect(() => {
     if (searchDoctor) {
       setFilteredDoctorList(filteredDoctors(searchDoctor));
@@ -18,6 +21,11 @@ const Home = () => {
 
   }, [searchDoctor])
   console.log("Filtered Doctor List", filteredDoctorList)
+
+  const doctorsToShow =
+    filteredDoctorList.length > 0 ? filteredDoctorList : doctorsData;
+
+  const visibleList = doctorsToShow.slice(0, visibleDoctors);
   return (
     <div>
       <div className='navbar-container border-2 border-slate-600 w-full'>
@@ -40,8 +48,9 @@ const Home = () => {
           /> */}
         </div>
         <div className='w-full h-full flex flex-wrap gap-6 justify-evenly py-10'>
-
-          {
+          <DoctorList doctors={visibleList} />
+          <LoadMoreButton onClick={() => setVisibleDoctors((prev)=>prev+6)} />
+          {/* {
             filteredDoctorList && filteredDoctorList.length > 0 ?
               filteredDoctorList.map((doctorsData) =>
                 <CardComp key={doctorsData.id} data={doctorsData} />
@@ -54,11 +63,11 @@ const Home = () => {
                 )
                 :
                 <p>No doctors available</p>
-          }
+          } */}
         </div>
       </div>
       <div>
-        
+
       </div>
     </div>
   )
