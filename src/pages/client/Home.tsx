@@ -8,6 +8,7 @@ import type { Doctor } from '../../interface/DoctorInterface'
 import Input from '../../components/common/Input'
 import DoctorList from '../../components/client/Doctor/DoctorList'
 import LoadMoreButton from '../../components/client/Doctor/LoadMoreButton'
+import Footer from '../../components/Footer'
 // import type { Doctor } from '../../interface/DoctorInterface'
 
 const Home = () => {
@@ -67,7 +68,7 @@ const Home = () => {
         <LoadMoreButton onClick={() => setVisibleDoctors((prev) => prev + 6)} />
       </div>
       <div>
-
+            <Footer />
       </div>
     </div>
   )

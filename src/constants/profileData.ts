@@ -20,3 +20,4 @@ export const profileData: Profile[] = [
     image: "/doctors/ahmed.jpg",
   },
 ];
+
