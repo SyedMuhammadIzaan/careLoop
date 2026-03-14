@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { doctorHandler, handleAppointment } from '../../handlers/doctorHandler'
-import { notification } from "antd";
 import type { Doctor } from '../../interface/DoctorInterface';
+import MyAppointment from './MyAppointment';
 // import { Image } from 'antd'
 
 
@@ -91,13 +91,20 @@ ${selectedSlot === slot
                         )
                 }
                 <div className='book-appointment-btn'>
-                    <button
-                        className="bg-blue-600 text-white px-6 py-2 rounded-lg"
-                        onClick={()=>{handleAppointment({selectedDay, selectedSlot})}}
-                    >
-                        Book Appointment
-                    </button>
-
+                    <Link to='/my-appointments' state={{
+    doctorName: doctor?.name,
+    specialization: doctor?.specialization,
+    day: selectedDay,
+    slot: selectedSlot
+  }}>
+                        <button
+                            className="bg-blue-600 text-white px-6 py-2 rounded-lg"
+                            onClick={() => { handleAppointment({ selectedDay, selectedSlot }) }}
+                        >
+                            Book Appointment
+                        </button>
+                    </Link>
+                    
                 </div>
             </div>
         </div>
