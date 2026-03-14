@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 // import DoctorLayout from './layout/DoctorLayout';
-import Herobanner from './components/client/Herobanner.tsx';
-import Home from './pages/client/Home.tsx';
+// import Herobanner from './components/client/Herobanner.tsx';
+// import Home from './pages/client/Home.tsx';
+import AppRouter from './routes/AppRouter.tsx';
 
 const App: React.FC = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  // const [collapsed, setCollapsed] = useState(false);
 
   return (
     // <DoctorLayout
@@ -12,7 +13,8 @@ const App: React.FC = () => {
     //   onCollapse={setCollapsed}
     // />
     <>
-    <Home />
+    <AppRouter />
+    {/* <Home /> */}
       {/* <Navbar />
       <div className='herobanner-container w-full'>
         <Herobanner />
