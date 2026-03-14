@@ -12,7 +12,7 @@ const PatientDashboard = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedRecord, setSelectedRecord] = useState<PatientRecordType | null>(null);
   const [tableData, setTableData] = useState<PatientRecordType[]>(patientRecordData);
-  const [modalType,setModalType] = useState<"patient" | "doctor" | null>(null)
+  const [modalType, setModalType] = useState<"patient" | "doctor" | null>(null)
   const handleEdit = useCallback((record: PatientRecordType) => {
     console.log("Edit record", record);
     setSelectedRecord(record);
@@ -33,7 +33,7 @@ const PatientDashboard = () => {
 
   const handleDelete = (record: PatientRecordType) => {
     console.log("Delete record", record);
-    setTableData((prev) => prev.filter((item:PatientRecordType) => item.key !== record.key));
+    setTableData((prev) => prev.filter((item: PatientRecordType) => item.key !== record.key));
   }
 
   const getPatientRecordColumns = ({ onEdit, onDelete }: ActionHandler): ColumnType<PatientRecordType>[] => [

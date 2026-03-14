@@ -68,7 +68,7 @@ const Home = () => {
         <LoadMoreButton onClick={() => setVisibleDoctors((prev) => prev + 6)} />
       </div>
       <div>
-            <Footer />
+        <Footer />
       </div>
     </div>
   )
